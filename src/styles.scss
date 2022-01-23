@@ -1,1 +1,60 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: #e2e9e9;
+  font-family: "Dongle", sans-serif;
+}
+
+.layout {
+  padding: 50px 100px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  border-radius: 10%;
+
+  .sidebar {
+    width: 300px;
+    background: #ffffff;
+    border-radius: 20px 0 0 20px;
+    padding: 20px 10px;
+    border-right: 2px solid #f9f9f9;
+  }
+
+  .pages {
+    background: #fefefe;
+    width: 100%;
+    border-radius: 0 20px 20px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .routes {
+      overflow: auto;
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  height: 6px;
+  width: 5px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: rgb(230, 230, 230);
+  height: 2px;
+  border-radius: 10px;
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: rgb(200, 200, 200);
+}

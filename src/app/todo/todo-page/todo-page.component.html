@@ -1,0 +1,65 @@
+<h1>TO DO</h1>
+
+<div class="board">
+  <div class="card-status">
+    <div class="header">
+      <h2>To do</h2>
+      <span>2</span>
+    </div>
+
+    <button>+</button>
+
+    <div
+      #todoList="cdkDropList"
+      cdkDropList
+      [cdkDropListData]="todos"
+      [cdkDropListConnectedTo]="[doneList]"
+      (cdkDropListDropped)="drop($event)"
+      class="todos"
+    >
+      <div class="todo" cdkDrag *ngFor="let todo of todos; let i = index">
+        <div class="header">
+          <h3>{{ todo.id }} {{ todo.titulo }}</h3>
+          <input type="checkbox" name="" id="" />
+        </div>
+
+        <p class="detail">
+          {{ todo.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-status">
+    <div class="header">
+      <h2>In Progress</h2>
+      <span>2</span>
+    </div>
+
+    <button>+</button>
+
+    <div
+      cdkDropList
+      #doneList="cdkDropList"
+      [cdkDropListConnectedTo]="[todoList]"
+      [cdkDropListData]="dones"
+      (cdkDropListDropped)="drop($event)"
+      class="todos"
+    >
+      <div class="todo" cdkDrag *ngFor="let todo of dones; let i = index">
+        <div class="header">
+          <h3>{{ todo.id }} {{ todo.titulo }}</h3>
+          <input type="checkbox" name="" id="" />
+        </div>
+
+        <p class="detail">
+          {{ todo.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-status">
+    <h2>Completed</h2>
+  </div>
+</div>
